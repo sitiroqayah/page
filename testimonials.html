@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimoni - Les Coding</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Kursus</a></li>
+                <li><a href="about.html">Tentang Kami</a></li>
+                <li><a href="testimonials.html">Testimoni</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="testimonials">
+            <div class="container">
+                <h1>Testimonial Pelanggan</h1>
+                
+                <!-- Form untuk menambahkan testimonial -->
+                <form id="testimonial-form">
+                    <input type="text" id="name" placeholder="Nama Anda" required>
+                    <textarea id="testimonial" placeholder="Testimonial Anda" required></textarea>
+                    <button type="button" onclick="addTestimonial()">Kirim Testimonial</button>
+                </form>
+        
+                <!-- Menampilkan testimonial -->
+                <h2>Daftar Testimonial</h2>
+                <div id="testimonials">
+                    <div class="testimonial-item">
+                        <h3>Jane Doe</h3>
+                        <p>Produk yang luar biasa! Pelayanan cepat dan sangat memuaskan.</p>
+                    </div>
+                    <div class="testimonial-item">
+                        <h3>John Smith</h3>
+                        <p>Saya sangat merekomendasikan toko ini. Kualitas barangnya sangat baik.</p>
+                    </div>
+                </div>
+            </div>
+        
+            <script>
+                function addTestimonial() {
+                    var name = document.getElementById('name').value;
+                    var testimonial = document.getElementById('testimonial').value;
+        
+                    if (name && testimonial) {
+                        var testimonialItem = document.createElement('div');
+                        testimonialItem.className = 'testimonial-item';
+                        testimonialItem.innerHTML = `<h3>${name}</h3><p>${testimonial}</p>`;
+        
+                        document.getElementById('testimonials').appendChild(testimonialItem);
+        
+                        // Clear the form
+                        document.getElementById('name').value = '';
+                        document.getElementById('testimonial').value = '';
+                    }
+                }
+            </script>
+       
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Les Coding. Semua hak cipta dilindungi.</p>
+    </footer>
+</body>
+</html>
